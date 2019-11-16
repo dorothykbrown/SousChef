@@ -1,0 +1,12 @@
+<h1>My Cookbook</h1>
+<p>Store all of your recipes here!</p>
+<h4><%= link_to 'Add a Recipe', new_recipe_path %></h4>
+
+<h4>Filter</h4>
+<h5>by Category</h5>
+<h5>by Difficulty</h5>
+<h5>by Time</h5>
+
+<% @recipes.each do |recipe| %>
+   <ul><%= recipe.title %></ul>
+<% end %>

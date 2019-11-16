@@ -1,0 +1,10 @@
+<%= simple_form_for @recipe do |f| %>
+<%= f.input :title, label: 'Recipe Name', require: true %>
+<%= f.input :time, label: 'Duration (minutes)', required: true %>
+<%= f.input :difficulty, label: 'Difficulty', required: true %>
+<%= f.input :rating, label: 'Your Recipe Rating', required: true %>
+<%= f.input :servings, label: 'Number of Servings', required: true %>
+<%= f.input :category, label: 'Recipe Category', required: true %>
+<%= f.input :notes, label: 'Recipe Notes/Instructions', required: true %>
+<%= f.submit 'Save Recipe' %>
+<% end %>
