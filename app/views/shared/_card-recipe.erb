@@ -1,0 +1,19 @@
+<div class="cards">
+  <% @recipes.each do |recipe| %>
+  <div class="card-recipe">
+    <%= link_to recipe_path(recipe) do %>
+    <img src= <%= recipe.photo_url %>>
+    <% end %>
+    <div class="card-recipe-infos">
+      <div>
+        <h2><%= link_to recipe.title, recipe_path(recipe) %></h2>
+        <p>Category: <%= recipe.category %></p>
+        <p>Difficulty: <%= recipe.difficulty %></p>
+      </div>
+      <div class="card-recipe-rating">
+        <h2><%= '⭐️' * recipe.rating.to_i %></h2>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

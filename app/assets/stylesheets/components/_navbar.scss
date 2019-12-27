@@ -1,0 +1,30 @@
+.navbar-lewagon {
+  justify-content: space-between;
+  background: white;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar h2 {
+  font-family: $logo-font;
+  font-size: 40px;
+  color: #4da0dc;
+  opacity: 0.75;
+}
+
+.navbar h2:hover {
+  opacity: 1;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 45px;
+  opacity: 0.5;
+  hover: 1;
+  vertical-align: top;
+}
+
+.navbar-lewagon .navbar-brand img:hover {
+  opacity: 1;
+}

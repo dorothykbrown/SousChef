@@ -1,16 +1,22 @@
 <h1><%= @recipe.title %></h1>
+<h4>Rating: <%= @recipe.rating %>/5</h4>
 
-<%= @recipe.rating.to_i * '⭐️' %>
-<h4>Difficulty: <%= @recipe.difficulty %></h4>s
+<h4>Difficulty: <%= @recipe.difficulty %></h4>
 <p>Cooking Time: <%= @recipe.time %> minutes </p>
 <p>Serves <%= @recipe.servings %></p>
 <p>Category: <%= @recipe.category %> </p>
 <h3>Instructions and Notes</h3>
 <%= @recipe.notes %>
 
-<% if  policy(@recipe).edit? %>
-  <%= link_to 'Edit', edit_recipe_path(@recipe)%> |
+<div>
+  <% if  policy(@recipe).edit? %>
+  <%= link_to 'Edit Recipe', edit_recipe_path(@recipe)%> |
 <% end %>
 <% if  policy(@recipe).destroy? %>
-  <%= link_to 'Remove', recipe_path(@recipe), data: { confirm: 'Are you sure?', method: :delete } %>
+  <%= link_to 'Remove Recipe', recipe_path(@recipe), data: { confirm: 'Are you sure?', method: :delete } %>
 <% end %>
+</div>
+
+<div>
+  <%= link_to 'Return to Recipes Index', recipes_path %>
+</div>

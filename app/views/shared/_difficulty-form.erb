@@ -1,0 +1,4 @@
+<%= simple_form_for @recipe do |f| %>
+<%= f.input :difficulty, as: :radio_buttons, collection: ['Easy', 'Medium', 'Hard'] %>
+<%= f.submit 'Apply Preferences' %>
+<% end %>

@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>SousChef</title>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
+    <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <%= stylesheet_pack_tag 'application', media: 'all' %>
+    <%= csp_meta_tag %>
+    <%= notice %>
+    <%= alert %>
   </head>
 
   <body>
+    <%= render 'shared/navbar' %>
     <%= yield %>
-
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_pack_tag 'application' %>
   </body>
 </html>
