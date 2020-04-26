@@ -14,3 +14,8 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+$(document).ready(function(){
+  $(".form-check").click(function(){
+    $(this).toggleClass("active");
+  });
+});

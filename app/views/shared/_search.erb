@@ -1,0 +1,9 @@
+<div style="width:600px;">
+<%= form_tag recipes_path, method: :get do %>
+ <%= text_field_tag :query,
+   params[:query],
+   placeholder: "Recipe title here"
+ %>
+  <%= submit_tag "Search", class: "btn btn-outline-primary",  :name => nil %>
+<% end %>
+</div>

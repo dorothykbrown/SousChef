@@ -12,17 +12,61 @@
     <p>Store all of your recipes here!</p>
 </div>
 
+<h3>Find a Recipe</h3>
+  <div class="search-input" align="center">
+    <%= render 'shared/search' %>
+    </div>
+</div>
+
+<h4><%= link_to 'Add a Recipe', new_recipe_path %></h4>
 
 <h3>View by Category</h3>
 <div class="category-cards">
   <%= render 'shared/card-category' %>
 </div>
+
+<h3>View by Difficulty</h3>
+<div class="difficulty-buttons">
+  <%= link_to 'Easy', recipes_path(:difficulty=>'Easy'), class: "btn btn-ghost" %>
+  <%= link_to 'Medium', recipes_path(:difficulty=>'Medium'), class: "btn btn-ghost" %>
+  <%= link_to 'Hard', recipes_path(:difficulty=>'Hard'), class: "btn btn-ghost" %>
+</div>
 <h3>Saved Recipes</h3>
 <div>
   <%= render 'shared/card-recipe' %>
 </div>
-<h4><%= link_to 'Add a Recipe', new_recipe_path %></h4>
-<h4>Filter</h4>
-<h5>by Difficulty</h5>
-<#%= render 'shared/difficulty-form' %>
-<h5>by Time</h5>
+
+<!--
+<h4>Recipe Preferences</h4>
+<div class="recipe-preferences-container">
+  <fieldset class="form-group check_boxes required recipe-preferences">
+    <legend class="col-form-label pt-0">Difficulty</legend>
+    <input type="hidden" name="recipe[difficulty][]" value="">
+    <% difficulty = ['Easy', 'Medium', 'Hard'] %>
+    <div class="difficulty-preferences">
+      <% difficulty.each do |d| %>
+        <div class="form-check">
+          <input class="form-check-input check_boxes optional hidden" type="hidden" value="<% d %>" name="recipe[difficulty][]" id="recipe_difficulty_<% d %>">
+          <label class="collection_check_boxes" for="recipe_difficulty_<% d %>"><%= d %></label>
+        </div>
+      <% end %>
+    </div>
+
+    <legend class="col-form-label pt-0">Category </legend>
+    <input type="hidden" name="recipe[category][]" value="">
+    <% category = ['Meat', 'Fish', 'Poultry', 'Appetizer', 'Dessert', 'Side Dish', 'Soup'] %>
+    <div class="category-preferences">
+      <% category.each do |c| %>
+        <div class="form-check">
+          <input class="form-check-input check_boxes optional hidden" type="hidden" value="<% c %>" name="recipe[category][]" id="recipe_category_<% c %>">
+          <label class="collection_check_boxes" for="recipe_category_<% c %>"><%= c %></label>
+        </div>
+      <% end %>
+    </div>
+  </fieldset>
+</div>
+
+
+<% time = ['< 30 min', '1 hour or less', '2 hours or less', '3 hours or greater'] %>
+
+!>

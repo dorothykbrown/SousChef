@@ -3,9 +3,13 @@ class RecipesController < ApplicationController
   before_action :authorize_recipe, only: %i[show edit update destroy]
   #skip_after_action :verify_authorized, only: [:show, :new]
   def index
-     @difficulties = Recipe.select(:difficulty).distinct
+    #@difficulties = Recipe.select(:difficulty).distinct
     if params[:category].present?
       @recipes = Recipe.where(category: params[:category])
+    elsif params[:difficulty].present?
+       @recipes = Recipe.where(difficulty: params[:difficulty])
+    elsif params[:query].present?
+      @recipes = Recipe.where("title ILIKE ?", "%#{params[:query]}%")
     else
       @recipes = policy_scope(Recipe).all
     end
@@ -25,7 +29,7 @@ class RecipesController < ApplicationController
     authorize @recipe
 
     if @recipe.save
-      redirect_to_recipe_path(@recipe)
+      redirect_to recipe_path(@recipe)
     else
       render :new
     end
@@ -35,7 +39,7 @@ class RecipesController < ApplicationController
 
   def update
     if @recipe.update(recipe_params)
-      redirect_to_recipe_path(@recipe)
+      redirect_to recipe_path(@recipe)
     else
       render :edit
     end
@@ -43,7 +47,7 @@ class RecipesController < ApplicationController
 
   def destroy
     if @recipe.destroy
-      redirect_to_recipes_path#, notice: 'Recipe was successfully removed.'
+      redirect_to recipes_path#, notice: 'Recipe was successfully removed.'
     else
       render :index#, notice: 'You have no recipes to remove.'
     end
@@ -60,7 +64,7 @@ class RecipesController < ApplicationController
   end
 
   def recipe_params
-    params.require(:recipe).permit(:title, :time, :difficulty, :rating,
+    params.require(:recipe).permit(:title, :photo_url, :time, :difficulty, :rating,
                                    :servings, :category, :notes)
   end
 end

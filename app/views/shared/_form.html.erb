@@ -1,10 +1,11 @@
 <%= simple_form_for @recipe do |f| %>
-<%= f.input :title, label: 'Recipe Name', require: true %>
+<%= f.input :title, label: 'Recipe Name', required: true %>
+<%= f.input :photo_url, label: 'Photo URL', required: true %>
 <%= f.input :time, label: 'Duration (minutes)', required: true %>
-<%= f.input :difficulty, label: 'Difficulty', required: true %>
+<%= f.input :difficulty, label: 'Difficulty', collection: ['Easy', 'Medium', 'Hard'], required: true %>
 <%= f.input :rating, label: 'Your Recipe Rating', required: true %>
 <%= f.input :servings, label: 'Number of Servings', required: true %>
-<%= f.input :category, label: 'Recipe Category', required: true %>
+<%= f.input :category, collection: ["Meat", "Fish", "Poultry", "Appetizer", "Side Dish", "Soup", "Dessert"], as: :check_boxes, required: true %>
 <%= f.input :notes, label: 'Recipe Notes/Instructions', required: true %>
 <%= f.submit 'Save Recipe' %>
 <% end %>
