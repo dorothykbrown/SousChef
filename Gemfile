@@ -8,7 +8,7 @@ gem 'rails', '~> 5.2.3'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
-gem 'puma', '~> 3.11'
+gem "puma", ">= 4.3.9"
 # Use SCSS for stylesheets
 gem 'sassc-rails', '~> 2.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
+gem "activestorage", ">= 5.2.4.3"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -56,8 +57,15 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'devise'
-gem 'pundit'
 gem 'autoprefixer-rails'
+gem 'devise'
 gem 'font-awesome-sass', '~> 5.6.1'
-gem 'simple_form'
+gem 'pundit'
+gem "actionpack", ">= 5.2.4.6"
+gem "actionview", ">= 5.2.4.3"
+gem "activerecord", ">= 5.2.4.5"
+gem "activesupport", ">= 5.2.4.3"
+gem "nokogiri", ">= 1.12.5"
+gem "rack", ">= 2.1.4"
+gem "simple_form", ">= 5.0.0"
+gem "websocket-extensions", ">= 0.1.5"
