@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.3'
+gem 'rails', '>= 5.2.4.6'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
@@ -61,6 +61,7 @@ gem 'autoprefixer-rails'
 gem 'devise'
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'pundit'
+gem "actioncable", ">= 0.1.0"
 gem "actionpack", ">= 5.2.4.6"
 gem "actionview", ">= 5.2.4.3"
 gem "activerecord", ">= 5.2.4.5"
@@ -69,3 +70,4 @@ gem "nokogiri", ">= 1.12.5"
 gem "rack", ">= 2.1.4"
 gem "simple_form", ">= 5.0.0"
 gem "websocket-extensions", ">= 0.1.5"
+gem "websocket-driver", ">= 0.1.0"
